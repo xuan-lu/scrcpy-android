@@ -91,6 +91,9 @@ class ScrcpySession private constructor(
                 "video=true",
                 "control=true",
                 "tunnel_forward=true",
+                // 在这里加下面两行：
+                "--turn-screen-off",
+                "--stay-awake",
             )
             if (!enableAudio) cmdParts += "audio=false"
             if (maxSize > 0) cmdParts += "max_size=$maxSize"
