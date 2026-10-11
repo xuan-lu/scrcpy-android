@@ -38,11 +38,17 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # 6. 开始云端编译 Debug 版 APK
+      # 6. 创建 Android Debug Keystore
+      - name: Create Android Debug Keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
+      # 7. 开始云端编译 Debug 版 APK
       - name: Build Debug APK with Gradle
         run: ./gradlew assembleDebug --stacktrace
 
-      # 7. 上传编译成功的 APK 安装包
+      # 8. 上传编译成功的 APK 安装包
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
