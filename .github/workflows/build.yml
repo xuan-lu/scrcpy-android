@@ -38,12 +38,20 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # 6. 创建 Android Debug Keystore（关键修复）
+      # 6. 先创建一个可写的 debug keystore 路径
       - name: Create Android Debug Keystore
         run: |
-          mkdir -p /home/runner/.config/.android
-          chmod 777 /home/runner/.config/.android
-          keytool -genkey -v -keystore /home/runner/.config/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          sudo mkdir -p /home/runner/.config/.android
+          sudo chmod 777 /home/runner/.config/.android
+          keytool -genkey -v \
+            -keystore /home/runner/.config/.android/debug.keystore \
+            -storepass android \
+            -alias androiddebugkey \
+            -keypass android \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
 
       # 7. 开始云端编译 Debug 版 APK
       - name: Build Debug APK with Gradle
