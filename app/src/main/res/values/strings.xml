@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Scropy</string>
-    <string name="connect_title">Connect to Android Device</string>
-    <string name="host_hint">Device IP Address (e.g. 192.168.1.5)</string>
-    <string name="port_hint">ADB Port (default 5555)</string>
-    <string name="btn_connect">Connect via WiFi</string>
-    <string name="btn_usb">Connect via USB / OTG</string>
-    <string name="status_connecting">Connecting…</string>
-    <string name="status_pushing">Pushing server…</string>
-    <string name="status_starting">Starting server…</string>
-    <string name="status_streaming">Streaming</string>
-    <string name="error_no_server">scrcpy-server not found in assets.\nBuild it first:\n  ./gradlew :server:assembleRelease</string>
-    <string name="error_connection">Connection failed: %1$s</string>
-    <string name="trust_prompt">Tap "Allow" on the target device to trust this connection.</string>
+    <string name="app_name">Scrcpy</string>
+    <string name="connect_title">连接至 Android 设备</string>
+    <string name="host_hint">设备 IP 地址 (例如 192.168.1.5)</string>
+    <string name="port_hint">ADB 端口 (默认 5555)</string>
+    <string name="btn_connect">通过无线 WiFi 连接</string>
+    <string name="btn_usb">通过 USB / OTG 连接</string>
+    <string name="status_connecting">正在连接…</string>
+    <string name="status_pushing">正在推送服务端程序…</string>
+    <string name="status_starting">正在启动服务端程序…</string>
+    <string name="status_streaming">正在投屏中</string>
+    <string name="error_no_server">在 assets 中未找到 scrcpy-server。\n请先编译：\n  ./gradlew :server:assembleRelease</string>
+    <string name="error_connection">连接失败：%1$s</string>
+    <string name="trust_prompt">请在目标设备上点击“允许”，以信任此连接。</string>
 </resources>
